@@ -1,0 +1,34 @@
+# Project: ABSFileWarning
+# Makefile created by Red Panda C++ 1.2
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+RES      = ABSFileWarning_private.res
+OBJ      = main.o $(RES)
+LINKOBJ  = main.o $(RES)
+CLEANOBJ  =  main.o ABSFileWarning_private.res ABSFileWarning.exe
+LIBS     =  -s -mwindows -lgraphics -luuid -lmsimg32 -lgdi32 -limm32 -lole32 -loleaut32 -lwinmm -lgdiplus   -static
+INCS     =  
+CXXINCS  =  
+BIN      = ABSFileWarning.exe
+CXXFLAGS = $(CXXINCS)  -O2 -pipe
+CFLAGS   = $(INCS)  -O2 -pipe
+RM       = del /q /f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(CLEANOBJ) > NUL 2>&1
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp BadButton.h
+	$(CPP) -c C:/Users/ÀŒ√˙‰ø/Documents/Projects/ABS_2.0/ABSWarning/ABSFileWarning/main.cpp -o main.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+ABSFileWarning_private.res: ABSFileWarning_private.rc 
+	$(WINDRES) -i ABSFileWarning_private.rc --input-format=rc -o ABSFileWarning_private.res -O coff 
+
