@@ -1,0 +1,34 @@
+# Project: ABSVirusWarning
+# Makefile created by Red Panda C++ 1.1.0
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+RES      = ABSVirusWarning_private.res
+OBJ      = main.o $(RES)
+LINKOBJ  = main.o $(RES)
+CLEANOBJ  =  main.o ABSVirusWarning_private.res ABSVirusWarning.exe
+LIBS     =  -s -mwindows -lgraphics -luuid -lmsimg32 -lgdi32 -limm32 -lole32 -loleaut32 -lwinmm -lgdiplus   -static
+INCS     =  
+CXXINCS  =  
+BIN      = ABSVirusWarning.exe
+CXXFLAGS = $(CXXINCS)  -O -pipe
+CFLAGS   = $(INCS)  -O -pipe
+RM       = del /q /f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(CLEANOBJ) > NUL 2>&1
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp BadButton.h
+	$(CPP) -c C:/Users/ÀŒ√˙‰ø/Documents/Projects/ABS_2.0/ABSWarning/ABSVirusWarning/main.cpp -o main.o $(CXXFLAGS) 
+
+ABSVirusWarning_private.res: ABSVirusWarning_private.rc 
+	$(WINDRES) -i ABSVirusWarning_private.rc --input-format=rc -o ABSVirusWarning_private.res -O coff 
+
