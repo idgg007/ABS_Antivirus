@@ -1,0 +1,17 @@
+EXPORTS
+    Viruses @1 DATA
+    _Z10ReadBinaryRSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EERS5_ @2
+    _Z11BinaryToDecRSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE @3
+    _Z11DisassemblyNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @4
+    _Z11KillProcessPKc @5
+    _Z11StringToNumRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @6
+    _Z13LoadVirusNamev @7
+    _Z16BinaryToAssembleRKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EERS7_RKSt3mapI6BinInsS5_St4lessISC_ESaISt4pairIKSC_S5_EEERSB_ISC_iSE_SaISF_ISG_iEEE @8
+    _Z17LoadVirusFeaturesv @9
+    _Z20InitBinaryToAssembleRKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EERSt3mapI6BinInsS5_St4lessISB_ESaISt4pairIKSB_S5_EEE @10
+    _Z23InitInstrctionArgNumberRSt3mapI6BinInsiSt4lessIS0_ESaISt4pairIKS0_iEEE @11
+    _Z24InitAssembleInstructionsRSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE @12
+    _Z7DisplayRKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EERS5_ @13
+    _Z8ScanFileNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE @14
+    _ZN8ABSVirus10AddFeatureESt3setINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4lessIS6_ESaIS6_EE @15
+    _ZN8ABSVirus13JudgeProgrameESt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS6_EE @16

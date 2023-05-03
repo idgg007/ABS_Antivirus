@@ -1,0 +1,37 @@
+# Project: ABSOEM
+# Makefile created by Red Panda C++ 1.2
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+RES      = ABSOEM_private.res
+OBJ      = dllmain.o $(RES)
+LINKOBJ  = dllmain.o $(RES)
+CLEANOBJ  =  dllmain.o ABSOEM_private.res ABSOEM.dll
+LIBS     =  -s -static
+INCS     =  
+CXXINCS  =  
+BIN      = ABSOEM.dll
+CXXFLAGS = $(CXXINCS)  -O2 -pipe -DBUILDING_DLL=1
+CFLAGS   = $(INCS)  -O2 -pipe -DBUILDING_DLL=1
+RM       = del /q /f
+DEF      = libABSOEM.def
+STATIC   = libABSOEM.a
+CLEAN_DEF      = libABSOEM.def
+CLEAN_STATIC   = libABSOEM.a
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(CLEANOBJ) $(CLEAN_DEF) $(CLEAN_STATIC) > NUL 2>&1
+
+$(BIN): $(LINKOBJ)
+	$(CPP) -mdll $(LINKOBJ) -o $(BIN) $(LIBS) -Wl,--output-def,$(DEF),--out-implib,$(STATIC)
+dllmain.o: dllmain.cpp
+	$(CPP) -c C:/Users/ÀŒ√˙‰ø/Documents/Projects/ABS_2.0/ABSOEM/dllmain.cpp -o dllmain.o $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
+
+ABSOEM_private.res: ABSOEM_private.rc 
+	$(WINDRES) -i ABSOEM_private.rc --input-format=rc -o ABSOEM_private.res -O coff 
+
