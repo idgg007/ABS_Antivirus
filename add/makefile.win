@@ -1,0 +1,34 @@
+# Project: add
+# Makefile created by Red Panda C++ 1.2
+
+CPP      = clang++.exe
+CC       = clang.exe
+WINDRES  = windres.exe
+RES      = add_private.res
+OBJ      = main.o $(RES)
+LINKOBJ  = main.o $(RES)
+CLEANOBJ  =  main.o add_private.res add.exe
+LIBS     =  -s -static
+INCS     =  
+CXXINCS  =  
+BIN      = add.exe
+CXXFLAGS = $(CXXINCS)  -O2 -pipe
+CFLAGS   = $(INCS)  -O2 -pipe
+RM       = del /q /f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(CLEANOBJ) > NUL 2>&1
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c C:/Users/ÀŒ√˙‰ø/Documents/Projects/ABS_2.0/add/main.cpp -o main.o $(CXXFLAGS) 
+
+add_private.res: add_private.rc 
+	$(WINDRES) -i add_private.rc --input-format=rc -o add_private.res -O coff 
+
